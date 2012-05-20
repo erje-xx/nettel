@@ -9,9 +9,27 @@
 solutions to ``wave physics"
 \end{abstract}
 \section{Chapter 1}
+Remaining: 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19, 1.20
 
-\noindent \textbf{Problem 1.1} \textit{text}
+\noindent \textbf{Problem 1.1} \textit{Find a general formula for $\frac{1}{2n!} \int_{-\infty}^{\infty} x^{2n} e^{-ax^2} dx$}.
 
+Integration by parts. 
+\begin{align*}
+\int_{-\infty}^{\infty} x^{2n} e^{-ax^2} dx &= \frac{2n-1}{2a} \int_{-\infty}^{\infty} x^{2n-2} e^{-ax^2} dx \\
+\int_{-\infty}^{\infty} x^{2n-2} e^{-ax^2} dx &= \frac{2n-3}{2a} \int_{-\infty}^{\infty} x^{2n-4} e^{-ax^2} dx \\
+& \vdots
+\end{align*}
+Repeated integration by parts yields
+\begin{align*}
+\int_{-\infty}^{\infty} x^{2n} e^{-ax^2} dx &= \left( \frac{2n-1}{2a} \right) \left( \frac{2n-3}{2a} \right) \cdots \left( \frac{2n-(2n-1)}{2a} \right) \int_{-\infty}^{\infty} x^{2n - 2n} e^{-ax^2} dx \\
+&= \left( \frac{2n-1}{2a} \right) \left( \frac{2n-3}{2a} \right) \cdots \left( \frac{2n-(2n-1)}{2a} \right) \int_{-\infty}^{\infty} e^{-ax^2} dx \\
+&=  \left( \frac{2n-(2n-1)}{2a} \right) \left( \frac{2n-(2n-3)}{2a} \right) \cdots \left( \frac{2n-1}{2a} \right) \int_{-\infty}^{\infty} e^{-ax^2} dx \\
+&= \frac{1}{(2a)^n} 1, 3, \cdots{}, (2n-1) \sqrt{\frac{\pi}{a}}.
+\end{align*}
+Therefore,
+\begin{equation*}
+\frac{1}{2n!} \int_{-\infty}^{\infty} x^{2n} e^{-ax^2} dx = \frac{\sqrt{\frac{\pi}{a}}}{2n! (2a)^n} 1, 3, \cdots{}, (2n-1).
+\end{equation*}
 
 \end{document}
 
