@@ -10,7 +10,9 @@ solutions to ``wave physics"
 \end{abstract}
 \section{Chapter 1}
 Remaining: 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19, 1.20
-
+%
+%
+%
 \noindent \textbf{Problem 1.1} \textit{Find a general formula for $\frac{1}{2n!} \int_{-\infty}^{\infty} x^{2n} e^{-ax^2} dx$}.
 
 Integration by parts. 
@@ -30,7 +32,44 @@ Therefore,
 \begin{equation*}
 \frac{1}{2n!} \int_{-\infty}^{\infty} x^{2n} e^{-ax^2} dx = \frac{\sqrt{\frac{\pi}{a}}}{2n! (2a)^n} 1, 3, \cdots{}, (2n-1).
 \end{equation*}
+%
+%
+%
+\noindent \textbf{Problem 1.10} \textit{(a) Show that any function can be written as the sum of an even function, $f_{e}(x)$ and an odd function $f_{o}(x)$}.
 
+\begin{align*}
+f_{e}(x) &= \frac{f(x) + f(-x)}{2}\\
+f_{o}(x) &= \frac{f(x) - f(-x)}{2}
+\end{align*}
+
+\textit{(b) Show that we may write the Fourier representation (1.24) as $F(x) = \frac{1}{\sqrt{\pi}} \int_{0}^{\infty} C(k) \cos{kx} dk + \frac{1}{\sqrt{\pi}} \int_{0}^{\infty} S(k) \sin{kx} dk$. Find C(k) and S(k) in terms of A(k) }.
+
+\begin{align*}
+F(x) &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} A(k) e^{ikx} dk = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} A(k) [\cos{kx} + i \sin{kx} ] dk \\
+&= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} A(k) \cos{kx} dk + \frac{i}{\sqrt{2\pi}} \int_{-\infty}^{\infty} A(k) \sin{kx} dk\\
+&= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{0} A(k) \cos{kx} dk + \frac{1}{\sqrt{2\pi}} \int_{0}^{\infty} A(k) \cos{kx} dk\\
+&+ \frac{i}{\sqrt{2\pi}} \int_{-\infty}^{0} A(k) \sin{kx} dk + \frac{i}{\sqrt{2\pi}} \int_{0}^{\infty} A(k) \sin{kx} dk\\
+&= -\frac{1}{\sqrt{2\pi}} \int_{\infty}^{0} A(-k) \cos{-kx} dk + \frac{1}{\sqrt{2\pi}} \int_{0}^{\infty} A(k) \cos{kx} dk\\
+&+ -\frac{i}{\sqrt{2\pi}} \int_{\infty}^{0} A(-k) \sin{-kx} dk + \frac{i}{\sqrt{2\pi}} \int_{0}^{\infty} A(k) \sin{kx} dk\\
+&= \frac{1}{\sqrt{2\pi}} \int_{0}^{\infty} A(-k) \cos{kx} dk + \frac{1}{\sqrt{2\pi}} \int_{0}^{\infty} A(k) \cos{kx} dk\\
+&+ -\frac{i}{\sqrt{2\pi}} \int_{0}^{\infty} A(-k) \sin{kx} dk + \frac{i}{\sqrt{2\pi}} \int_{0}^{\infty} A(k) \sin{kx} dk\\
+&= \frac{1}{\sqrt{2\pi}} \int_{0}^{\infty} [A(k) + A(-k)] \cos{kx} dk + \frac{1}{\sqrt{2\pi}} \int_{0}^{\infty} i [A(k) - A(-k)] \sin{kx} dk.
+\end{align*}
+Let,
+\begin{align*}
+C(k) &= \frac{1}{\sqrt{2}} [A(k) + A(-k)]\\
+S(k) &= \frac{i}{\sqrt{2}} [A(k) - A(-k)].
+\end{align*}
+Then,
+\begin{equation*}
+F(x) = \frac{1}{\sqrt{\pi}} \int_{0}^{\infty} C(k) \cos{kx} dk + \frac{1}{\sqrt{\pi}} \int_{0}^{\infty} S(k) \sin{kx} dk.
+\end{equation*}
+
+\textit{(c) Find Fourier expansions for $f_{e}(x)$ and $f_{o}(x)$ in part (a) in terms of $A(k)$, $A(-k)$ and then in terms of $C(k)$ and $S(k)$}.
+
+\textit{(d) Find $\int_{-\infty}^{\infty}\cos{k^{\prime}x}\cos{kx} e^{- \frac{x^2}{4n}} dx$ and, then, a simple formula for C(k) in terms of $f_{e}(x)$}.
+
+\textit{(e) Find $\int_{-\infty}^{\infty}\sin{k^{\prime}x}\cos{kx} e^{- \frac{x^2}{4n}} dx$}.
 \end{document}
 
 
